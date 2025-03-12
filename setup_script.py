@@ -97,15 +97,16 @@ if __name__ == "__main__":
         conda create -n yue python &&
         conda activate yue &&
         conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia &&
-        curl -sSL {REPO_URL.replace(".git", "")}/main/requirements.txt | pip install -r /dev/stdin &&
+        curl -sSL {REPO_URL.replace('.git', '')}/main/requirements.txt | pip install -r /dev/stdin &&
         pip install flash-attn --no-build-isolation &&
         pip install streamlit &&
         sudo apt update &&
         sudo apt install git-lfs &&
         git lfs install &&
         git clone {REPO_URL} &&
-        git clone {XCODEC_MINI_INFER_REPO_URL}'
-        """, shell=True
+        git clone {XCODEC_MINI_INFER_REPO_URL}
+        """, 
+        shell=True
     )
 
     repo           = REPO_URL.split("/")[-1].split(".")[0]
